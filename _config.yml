@@ -8,7 +8,8 @@ logo:               'assets/img/logo.png'
 background:         'assets/img/placeholder-big.jpg'
 tiled_bg:           false   # Set this true if you want to tile your background image, otherwise it will be covered
 locale:             en_US
-url:                https://viviencheng.github.io
+url:                http://localhost:4000
+futrue:             true
 
 # Jekyll
 permalink:          /:title/
@@ -69,6 +70,11 @@ gems:
 
 jekyll-mentions:
     base_url: https://github.com
+
+# Markdown
+markdown: redcarpet
+redcarpet:
+    extensions: ["fenced_code_blocks", "tables", "highlight", "with_toc_data", "strikethrough", "underline"]
 
 # Exclude list
 exclude: [README.md, Gemfile, Gemfile.lock, node_modules, gulpfile.js, package.json, _site, src, vendor, CNAME, LICENSE, Rakefile]
