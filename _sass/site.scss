@@ -24,6 +24,14 @@ body {
 		background: $white;
 	}
 }
+article, .entry-meta, section {
+	font-family: PingFangSC-Light,Georgia, "Linux Libertine",-apple-system,"Helvetica Neue",Helvetica,"Nimbus Sans L",Arial,"Liberation Sans","PingFang SC","Hiragino Sans GB","Source Han Sans CN","Source Han Sans SC","Microsoft YaHei","Wenquanyi Micro Hei","WenQuanYi Zen Hei","ST Heiti",SimHei,"WenQuanYi Zen Hei Sharp",sans-serif;
+  line-height: 170%;
+}
+section {
+	display: block;
+	padding-bottom: 10px;
+}
 * {
 	box-sizing: border-box;
 }
@@ -135,9 +143,10 @@ body {
 // entry meta
 .entry-meta {
 	@include font-rem(12);
-	text-transform: uppercase;
-	color: lighten($color_tuatara,60);
+	text-transform: lowercase;
 	padding-left: 0;
+	margin-bottom: 1em;
+  padding-top: 20px;
 	a {
 		color: lighten($color_tuatara,60);
 	}
@@ -146,28 +155,28 @@ body {
 	    display: inline;
 	}
 	.tag {
-	    display: inline-block;
-        border: 1px solid;
-        border-color: rgba($color_mercury,0.5) rgba($color_bon_jour,0.5) $color_mischka;
-        @include rounded(3px);
-        text-decoration: none;
-        background-color: $white;
-        color: $color_tuatara;
-        @include transition(.75s);
-        margin: 2px 5px;
-		span {
-			float: left;
-			padding: 2px 6px;
+		font-size: 1.0rem;
+		display: inline-block;
+    background: #fff;
+    width: auto;
+    height: auto;
+    border-radius: 3px;
+    letter-spacing: .01em;
+    cursor: pointer;
+    margin: 0 4px 7px 0;
+    color: #2c3e50;
+    border: 1px solid #2980b9;
+    padding: 1px 6px;
+    text-decoration: none;
 		}
-		.count {
-			background-color: darken($white,15);
-			@include border-radius(3px,3px,0,0);
-		}
-		&:hover {
-			background-color: darken($white,15);
+		.tag:hover {
 			box-shadow: 0 0 1px 0 rgba($color_shark,0.5);
 		}
+	.count {
+		background-color: darken($white,15);
+		@include border-radius(3px,3px,0,0);
 	}
+
 }
 header .entry-meta {
 	display: none; // hide header meta on small screens
@@ -175,8 +184,45 @@ header .entry-meta {
 		display: block;
 	}
 }
-.entry-title a {
-    text-decoration: none;
+.entry-title {
+	padding-left: 0;
+  overflow: hidden;
+  display: block;
+	li{
+		list-style-type: none;
+	  display: block;
+		padding: 0.8em 0px 0.8em 0px;
+	  text-decoration: none;
+	  border-bottom: 1px dashed #d0d0d0;
+	  color: #2c3e50;
+		a {
+			text-decoration: none;
+			list-style-type: none;
+	    display: block;
+	    font-size: 1.0rem;
+	    color: #2c3e50;
+	    font-weight: 800;
+			time {
+				display: inline-block;
+				float: right;
+	    	color: #2c3e50;
+	    	font-family: PingFangSC-Light, 'lucida grande', 'lucida sans unicode', lucida, 'Helvetica Neue', helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+	    	font-size: 0.6rem;
+	    	color: #2c3e50;
+			}
+		}
+	}
+}
+.category-listing-seperator {
+	color: #2980b9;
+	font-family: PingFangSC-Light, 'lucida grande', 'lucida sans unicode', lucida, 'Helvetica Neue', helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+  font-weight: 400;
+  list-style-type: none;
+  display: block;
+  text-decoration: none;
+  font-size: 1.5rem;
+  margin-top: 40px;
+  margin-bottom: 20px;
 }
 .entry-tags {
 	display: block;
@@ -219,4 +265,41 @@ header .entry-meta {
         background-blend-mode: multiply;
         background-position: center center;
     }
+}
+
+.book-progress {
+	color: #2c3e50;
+	font-family: PingFangSC-Light,"Avenir Next", Helvetica, Arial, "Lantinghei SC", "Microsoft YaHei", sans-serif;
+  list-style-type: none;
+  display: block;
+  text-decoration: none;
+  font-size: 1.5em;
+	line-height: 1.1;
+	margin-top: 20px;
+  margin-bottom: 10px;
+	margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+.book-list{
+	margin-left: 18px !important;
+  margin-right: 18px !important;
+  width: auto !important;
+	text-align: left;
+	ul {
+		list-style: none;
+		padding-left: 0;
+	}
+	li {
+		padding-left: 0;
+		text-decoration: none;
+		color: #2c3e50;
+		font-size: 1.1em;
+		overflow: hidden;
+		display: block;
+		list-style-type: none;
+		padding: 0.4em 0px 0.4em 0px;
+	}
 }

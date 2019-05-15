@@ -17,23 +17,44 @@ layout: compress
             <div class="content">
                 <div class="post-title">
                     <h1>{{ page.title }}</h1>
-                    <a class="btn zoombtn" href="{{site.url}}">
-                        <i class="fa fa-home"></i>
-                    </a>
                 </div>
-                <div class="post-list">
-                    {% for post in site.posts %} 
-                        {% if post.project == null %}
-                    <ul>
-                        <li class="wow fadeInLeft" data-wow-duration="1.5s">
-                            <a class="zoombtn" href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
-                            <p>{{ post.excerpt }}</p>
-                            <a href="{{ site.url }}{{ post.url }}" class="btn zoombtn">Read More</a>
-                        </li>
-                    </ul>
-                        {% endif %}
-                    {% endfor %}
-                </div>
+
+                {% assign post_dates = site.posts | map:"date" %}
+                {% capture site_dates %}{% for date in post_dates %}{{ date | date:"%Y" }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
+                {% assign date_list = site_dates | split:',' | sort %}
+                <!--<div>
+                  <h1> {{ date_list }} </h1>
+                </div>-->
+
+
+                {% assign post_array = site.posts | map:"date" %}
+                <!--<ul>
+                {% for item in (0..post_array.size) %}{% unless forloop.last %}
+                {% capture this_date %} {{ post_array[item] | date: "%Y" }} {% endcapture %}
+                <li>
+                    <a>{{ this_date }}</a>
+                    </li>
+                  {% endunless %}{% endfor %}
+                </ul>-->
+
+
+                <article class="post-list">
+                <!--<div class="post-list">-->
+                  {% for post in site.posts %}{% if post.project == null %}
+                  <ul>
+                      <li class="wow fadeInLeft" data-wow-duration="1.5s">
+                        <a class="zoombtn" href="{{ site.url }}{{ post.url }}">
+                          <span class="date">{{ post.date | date_to_string }}</span>
+                          <span class="article-title">{{ post.title }}</span>
+                          <div class="sort-in-index-post">
+                            <div class="sort">{{ post.tags }}</div>
+                          </div>
+                        </a>
+                      </li>
+                  </ul>
+                  {% endif %}{% endfor %}
+                  <!--</div>-->
+                </article>
             </div>
         </div>
     </header>

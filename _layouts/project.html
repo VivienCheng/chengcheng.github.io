@@ -15,25 +15,25 @@ layout: compress
     <header class="header" role="banner">
         <div class="wrapper animated fadeIn">
             <div class="content">
-                <div class="post-title">
-                    <h1>{{ page.title }}</h1>
-                    <a class="btn zoombtn" href="{{site.url}}">
-                        <i class="fa fa-home"></i>
-                    </a>
-                </div>
-                <div class="post-list">
-                    {% for post in site.posts %} 
-                        {% if post.project %}
-                    <ul>
-                        <li class="wow fadeInLeft" data-wow-duration="1.5s">
-                            <a class="zoombtn" href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
-                            <p>{{ post.excerpt }}</p>
-                            <a href="{{ site.url }}{{ post.url }}" class="btn zoombtn">Read More</a>
-                        </li>
-                    </ul>
-                      {% endif %}
-                    {% endfor %}
-                </div>
+              <div class="post-title">
+                  <h1>{{ page.title }}</h1>
+              </div>
+              <section class="book-list">
+                <h2 id="读ing" class="book-progress">读ing</h2>
+                <ul>
+                  <li>《PHP 7底层设计与源码实现》</li>
+                  <li>《宏观经济学》</li>
+                </ul>
+                <h2 id="已读完-推荐书单" class="book-progress">已读完-推荐书单</h2>
+                <ul>
+                  <li>《美女饮食图鉴》</li>
+                </ul>
+                <h2 id="待读" class="book-progress">待读</h2>
+                <ul>
+                  <li>《世界咖啡学》</li>
+                  <li>《宏观经济学》</li>
+                </ul>
+              </section>
             </div>
         </div>
     </header>

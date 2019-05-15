@@ -37,6 +37,19 @@ h3.title a {
 	text-decoration: none;
 }
 
+.post-listing-seperator {
+	font-family: PingFangSC-Light,'lucida grande', 'lucida sans unicode', lucida, 'Helvetica Neue', helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+	font-weight: 800;
+	padding: 4px 4px 4px 0px;
+	list-style-type: none;
+	display: block;
+	text-decoration: none;
+	color: #33cccc;
+	font-size:x-large;
+	margin-top: 40px;
+	margin-bottom: 20px;
+}
+
 // post list
 .post-list {
     text-align: left;
@@ -45,7 +58,7 @@ h3.title a {
 		padding-left: 0;
 	}
 	li {
-		padding: 10px 18px;
+		padding: 10px 10px;
 		margin: 0 10px;
 		text-decoration: none;
 		background: $white;
@@ -55,10 +68,45 @@ h3.title a {
 			text-decoration: none;
 			color: $color_shark;
 			font-weight: bolder;
-            &:hover {
-                color: $red;
-            }
-		}
+			overflow: hidden;
+			display: block;
+			list-style-type: none;
+    	padding: 0.8em 0px 0.8em 0px;
+    	border-bottom: 1px dashed #d0d0d0;
+			padding-left: 0;
+			padding-right: 0;
+			.date {
+				float: left;
+			  width: 120px;
+			  font-size: 0.6em;
+			  color: #2c3e50;
+				margin-right: 0.3em;
+		    font-family: PingFangSC-Light, 'lucida grande', 'lucida sans unicode', lucida, 'Helvetica Neue', helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+				}
+			.article-title {
+				float: left;
+	    	font-weight: 1500;
+	    	color: #2c3e50;
+	    	margin-right: 3px;
+	    	transition: all 100ms linear;
+				font-size: 1.0rem;
+				}
+					.article-title:hover {
+						color: #33cccc;
+						}
+			.sort-in-index-post{
+				float: right;
+				color: #2c3e50;
+				font-size: 0.8em;
+				}
+			.sort {
+	    	color: #2c3e50;
+	    	font-weight: normal;
+	    	font-size: 0.8em;
+	    	float: right;
+	    	font-family: PingFangSC-Light,'lucida grande', 'lucida sans unicode', lucida, 'Helvetica Neue', helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+				}
+			}
 		p {
 			font-weight: lighter;
 			@include font-rem(16);
